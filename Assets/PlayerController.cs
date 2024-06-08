@@ -1,25 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class PlayerController : MonoBehaviour
 {
     // Speed of the player movement
     public float speed = 5.0f;
 
+    // Audio source for walking sound
+    public AudioSource walkingAudio;
 
+    // Animator component for controlling animations
+    public Animator animator;
 
-    void Start()
-    {
-        // Check if there is a saved position and rotation in SceneData
-        if (SceneData.PlayerPosition != Vector3.zero || SceneData.PlayerRotation != Quaternion.identity)
-        {
-            // Set the player's position and rotation to the saved values
-            transform.position = SceneData.PlayerPosition;
-            transform.rotation = SceneData.PlayerRotation;
-        }
-    }
-
+    // Boolean to check if the player is walking
+    private bool isWalking = false;
 
     // Update is called once per frame
     void Update()
@@ -29,9 +23,45 @@ public class PlayerController : MonoBehaviour
 
         // Move the player forward and backward along the Z-axis
         transform.Translate(0, 0, move * speed * Time.deltaTime);
-        SavePlayerState();
 
+        // Check if the player is pressing the "W" or "S" keys
+        if (Input.GetKey(KeyCode.W))
+        {
+            if (!isWalking)
+            {
+                isWalking = true;
+                walkingAudio.Play();
+                animator.SetBool("IsWalking", true);
+            }
+
+            // Ensure the player is facing forward
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            if (!isWalking)
+            {
+                isWalking = true;
+                walkingAudio.Play();
+                animator.SetBool("IsWalking", true);
+            }
+
+            // Rotate the player to face backward
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            if (isWalking)
+            {
+                isWalking = false;
+                walkingAudio.Stop();
+                animator.SetBool("IsWalking", false);
+            }
+        }
+
+        SavePlayerState();
     }
+
     void SavePlayerState()
     {
         GameObject player = GameObject.FindWithTag("Player");
