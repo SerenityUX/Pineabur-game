@@ -12,8 +12,27 @@ public class PlayerController : MonoBehaviour
     // Animator component for controlling animations
     public Animator animator;
 
+    // Reference to the armature (root object controlling the rig)
+    public Transform armatureRoot;
+
     // Boolean to check if the player is walking
     private bool isWalking = false;
+
+    // Initial rotation of the armature
+    private Quaternion initialRotation;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Ensure the player starts in the idle state
+        isWalking = false;
+        animator.SetBool("IsWalking", false);
+
+        // Store the initial rotation of the armature
+        initialRotation = armatureRoot.localRotation;
+
+        Debug.Log("PlayerController started. Initial state set to idle.");
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,10 +51,12 @@ public class PlayerController : MonoBehaviour
                 isWalking = true;
                 walkingAudio.Play();
                 animator.SetBool("IsWalking", true);
+                Debug.Log("Started walking forward.");
             }
 
-            // Ensure the player is facing forward
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            // Ensure the armature is facing forward
+            armatureRoot.localRotation = initialRotation;
+            Debug.Log("Set armature rotation to initial forward rotation.");
         }
         else if (Input.GetKey(KeyCode.S))
         {
@@ -44,10 +65,12 @@ public class PlayerController : MonoBehaviour
                 isWalking = true;
                 walkingAudio.Play();
                 animator.SetBool("IsWalking", true);
+                Debug.Log("Started walking backward.");
             }
 
-            // Rotate the player to face backward
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            // Rotate the armature to face backward
+            armatureRoot.localRotation = initialRotation * Quaternion.Euler(180, 0, 0);
+            Debug.Log("Set armature rotation to initial backward rotation.");
         }
         else
         {
@@ -56,6 +79,7 @@ public class PlayerController : MonoBehaviour
                 isWalking = false;
                 walkingAudio.Stop();
                 animator.SetBool("IsWalking", false);
+                Debug.Log("Stopped walking.");
             }
         }
 
@@ -69,6 +93,11 @@ public class PlayerController : MonoBehaviour
         {
             SceneData.PlayerPosition = player.transform.position;
             SceneData.PlayerRotation = player.transform.rotation;
+            Debug.Log("Player state saved.");
+        }
+        else
+        {
+            Debug.LogWarning("Player object not found!");
         }
     }
 }
