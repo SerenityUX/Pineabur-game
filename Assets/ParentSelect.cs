@@ -1,15 +1,17 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
 public class ParentSelect : MonoBehaviour
 {
     public GameObject selectIndicator;
-
     public GameObject fatherSelector;
     public GameObject motherSelector;
     public TextMeshPro selectionText;
     public TextMeshPro correctPairing;
     public TextMeshPro failedPairing;
+    public AudioSource clickSound; // Add this in the inspector
+
     private int fatherCounter = 2;
     private int motherCounter = 2;
     private float moveDistance = 2.0f;
@@ -41,14 +43,17 @@ public class ParentSelect : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.D))
                 {
+                    PlayClickSound();
                     StartCoroutine(MoveSelector(Vector3.left, fatherSelector, true));
                 }
                 else if (Input.GetKeyDown(KeyCode.A))
                 {
+                    PlayClickSound();
                     StartCoroutine(MoveSelector(Vector3.right, fatherSelector, true));
                 }
                 else if (Input.GetKeyDown(KeyCode.Return))
                 {
+                    PlayClickSound();
                     ActivateMotherSelector();
                 }
             }
@@ -56,14 +61,17 @@ public class ParentSelect : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.D))
                 {
+                    PlayClickSound();
                     StartCoroutine(MoveSelector(Vector3.left, motherSelector, false));
                 }
                 else if (Input.GetKeyDown(KeyCode.A))
                 {
+                    PlayClickSound();
                     StartCoroutine(MoveSelector(Vector3.right, motherSelector, false));
                 }
                 else if (Input.GetKeyDown(KeyCode.Return))
                 {
+                    PlayClickSound();
                     FinalizeSelection();
                 }
             }
@@ -101,7 +109,6 @@ public class ParentSelect : MonoBehaviour
                 motherSelector.SetActive(false);
                 selectionText.gameObject.SetActive(false);
                 selectIndicator.SetActive(false);
-
                 correctPairing.gameObject.SetActive(true);
             }
         }
@@ -117,7 +124,7 @@ public class ParentSelect : MonoBehaviour
         }
     }
 
-    System.Collections.IEnumerator MoveSelector(Vector3 direction, GameObject selector, bool isFather)
+    IEnumerator MoveSelector(Vector3 direction, GameObject selector, bool isFather)
     {
         isMoving = true;
 
@@ -160,5 +167,13 @@ public class ParentSelect : MonoBehaviour
         }
 
         isMoving = false;
+    }
+
+    void PlayClickSound()
+    {
+        if (clickSound != null)
+        {
+            clickSound.Play();
+        }
     }
 }
