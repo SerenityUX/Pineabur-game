@@ -64,7 +64,7 @@ public class NPCSelector : MonoBehaviour
         if (_highlightedNPC != null && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log(_highlightedNPC.name);
-            SendUserBack.SavePlayerState(gameObject);
+            SceneData.PreviousScene = SceneManager.GetActiveScene().name;
             SceneData.NPCName = _highlightedNPC.name; // Set the NPC's name
             SceneManager.LoadScene("NPCTalking");
         }
