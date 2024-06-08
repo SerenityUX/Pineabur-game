@@ -7,7 +7,7 @@ public class SendUserBack : MonoBehaviour
     void Update()
     {
         // Check for the return key press to load the previous scene
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!string.IsNullOrEmpty(SceneData.PreviousScene))
             {
