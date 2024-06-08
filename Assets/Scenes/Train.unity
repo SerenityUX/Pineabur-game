@@ -2465,7 +2465,7 @@ GameObject:
   - component: {fileID: 684463063}
   - component: {fileID: 684463062}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: franklin
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
