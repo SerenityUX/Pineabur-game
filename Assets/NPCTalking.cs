@@ -12,8 +12,10 @@ public class NPCTalking : MonoBehaviour
 
     private string npcVoiceLine;
 
+
     void Start()
     {
+
         if (npcNameText != null && dayText != null && npcTalkLine != null)
         {
             dayText.text = "Day #" + SceneData.Day;

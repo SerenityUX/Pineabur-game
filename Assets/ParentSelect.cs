@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement; // Add this to handle scene changes
+using UnityEngine.SceneManagement;
 
 public class ParentSelect : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ParentSelect : MonoBehaviour
     public TextMeshPro correctPairing;
     public TextMeshPro failedPairing;
     public AudioSource clickSound; // Add this in the inspector
+    public TextMeshPro babyNameText; // Assign a TMP Text element for the baby's name
+    public TextMeshPro qualitiesText; // Assign a TMP Text element for the baby's qualities
 
     private int fatherCounter = 2;
     private int motherCounter = 2;
@@ -22,9 +25,19 @@ public class ParentSelect : MonoBehaviour
     private int attempts = 0; // Track the number of attempts
     private bool showResult = false; // To manage the enter key after showing result
     private Vector3 initialPosition = new Vector3(6, 3.38f, -8.68f); // Initial position for selectors
+    private List<BabyData.Baby> babiesBornToday;
+
+    private List<string> fathers = new List<string> { "franklin", "john", "mike", "david", "peter", "alex" };
+    private List<string> mothers = new List<string> { "nancy", "mary", "susan", "jane", "linda", "sarah" };
 
     void Start()
     {
+        babiesBornToday = BabyData.GetBabiesBornOnDay(SceneData.Day);
+        foreach (var baby in babiesBornToday)
+        {
+            Debug.Log("Baby Name: " + baby.Name);
+        }
+
         if (motherSelector != null)
         {
             motherSelector.SetActive(false);
@@ -36,6 +49,12 @@ public class ParentSelect : MonoBehaviour
         if (failedPairing != null)
         {
             failedPairing.gameObject.SetActive(false);
+        }
+
+        // Initialize the baby name and qualities
+        if (babiesBornToday.Count > 0)
+        {
+            UpdateBabyInfo(babiesBornToday[0]);
         }
     }
 
@@ -110,7 +129,20 @@ public class ParentSelect : MonoBehaviour
     {
         Debug.Log("Mother Counter: " + motherCounter);
 
-        if (fatherCounter == 0 && motherCounter == 0)
+        bool isCorrectPairing = false;
+        BabyData.Baby matchedBaby = null;
+
+        foreach (var baby in babiesBornToday)
+        {
+            if (fathers[fatherCounter] == baby.Father && mothers[motherCounter] == baby.Mother)
+            {
+                isCorrectPairing = true;
+                matchedBaby = baby;
+                break;
+            }
+        }
+
+        if (isCorrectPairing)
         {
             if (correctPairing != null)
             {
@@ -118,6 +150,12 @@ public class ParentSelect : MonoBehaviour
                 selectionText.gameObject.SetActive(false);
                 selectIndicator.SetActive(false);
                 correctPairing.gameObject.SetActive(true);
+            }
+
+            // Update baby info if the pairing is correct
+            if (matchedBaby != null)
+            {
+                UpdateBabyInfo(matchedBaby);
             }
         }
         else
@@ -139,9 +177,15 @@ public class ParentSelect : MonoBehaviour
         showResult = false;
         attempts++;
 
-        if (attempts < 3)
+        if (attempts < babiesBornToday.Count)
         {
             ResetSelectors();
+
+            // Update baby info to the next baby
+            if (attempts < babiesBornToday.Count)
+            {
+                UpdateBabyInfo(babiesBornToday[attempts]);
+            }
         }
         else
         {
@@ -235,6 +279,19 @@ public class ParentSelect : MonoBehaviour
         if (clickSound != null)
         {
             clickSound.Play();
+        }
+    }
+
+    void UpdateBabyInfo(BabyData.Baby baby)
+    {
+        if (babyNameText != null)
+        {
+            babyNameText.text = baby.Name;
+        }
+
+        if (qualitiesText != null)
+        {
+            qualitiesText.text = string.Join("\n", baby.Qualities);
         }
     }
 }
