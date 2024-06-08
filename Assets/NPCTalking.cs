@@ -17,7 +17,7 @@ public class NPCTalking : MonoBehaviour
         if (npcNameText != null && dayText != null && npcTalkLine != null)
         {
             dayText.text = "Day #" + SceneData.Day;
-            npcNameText.text = "Talking to: " + SceneData.NPCName;
+            npcNameText.text = SceneData.NPCName;
             npcVoiceLine = GetNPCVoiceLine(SceneData.NPCName, SceneData.Day);
 
             if (!string.IsNullOrEmpty(npcVoiceLine))

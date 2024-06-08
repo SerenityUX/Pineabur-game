@@ -4,10 +4,10 @@ using TMPro;
 public class FastClock : MonoBehaviour
 {
     public TMP_Text clockText;
-    private float elapsedTime = 0f;
     private const float duration = 90f;
     private System.DateTime startTime;
     private System.DateTime endTime;
+    private bool isNightScene = false;
 
     void Start()
     {
@@ -24,14 +24,20 @@ public class FastClock : MonoBehaviour
                 Debug.LogError("TMP_Text component is not assigned or attached to the GameObject.");
             }
         }
+
+        // Reset elapsed time if it's the night scene
+        if (isNightScene)
+        {
+            SceneData.ElapsedTime = 0f;
+        }
     }
 
     void Update()
     {
-        if (elapsedTime < duration)
+        if (SceneData.ElapsedTime < duration)
         {
-            elapsedTime += Time.deltaTime;
-            float t = elapsedTime / duration;
+            SceneData.ElapsedTime += Time.deltaTime;
+            float t = SceneData.ElapsedTime / duration;
 
             // Calculate the current time based on interpolation
             System.DateTime currentTime = LerpDateTime(startTime, endTime, t);
@@ -48,5 +54,12 @@ public class FastClock : MonoBehaviour
         long endTicks = end.Ticks;
         long currentTicks = (long)(startTicks + (endTicks - startTicks) * t);
         return new System.DateTime(currentTicks);
+    }
+
+    public void SwitchToNightScene()
+    {
+        isNightScene = true;
+        SceneData.ElapsedTime = 0f;
+        // Add logic here to switch to the night scene if needed
     }
 }
