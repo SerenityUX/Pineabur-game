@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement; // Add this to handle scene changes
 
 public class ParentSelect : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class ParentSelect : MonoBehaviour
     private float moveDuration = 0.15f;
     private bool isMoving = false;
     private bool isFatherActive = true;
+    private int attempts = 0; // Track the number of attempts
+    private bool showResult = false; // To manage the enter key after showing result
+    private Vector3 initialPosition = new Vector3(6, 3.38f, -8.68f); // Initial position for selectors
 
     void Start()
     {
@@ -37,7 +41,7 @@ public class ParentSelect : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving)
+        if (!isMoving && !showResult)
         {
             if (isFatherActive)
             {
@@ -75,6 +79,10 @@ public class ParentSelect : MonoBehaviour
                     FinalizeSelection();
                 }
             }
+        }
+        else if (showResult && Input.GetKeyDown(KeyCode.Return))
+        {
+            HandleResultAndRestart();
         }
     }
 
@@ -122,6 +130,59 @@ public class ParentSelect : MonoBehaviour
                 failedPairing.gameObject.SetActive(true);
             }
         }
+
+        showResult = true; // Set showResult to true to wait for Enter key press
+    }
+
+    void HandleResultAndRestart()
+    {
+        showResult = false;
+        attempts++;
+
+        if (attempts < 3)
+        {
+            ResetSelectors();
+        }
+        else
+        {
+            SceneManager.LoadScene("Train");
+        }
+    }
+
+    void ResetSelectors()
+    {
+        if (correctPairing != null)
+        {
+            correctPairing.gameObject.SetActive(false);
+        }
+        if (failedPairing != null)
+        {
+            failedPairing.gameObject.SetActive(false);
+        }
+        if (selectionText != null)
+        {
+            selectionText.gameObject.SetActive(true);
+            selectionText.text = "Who's the father?";
+        }
+        if (selectIndicator != null)
+        {
+            selectIndicator.SetActive(true);
+        }
+        if (fatherSelector != null)
+        {
+            fatherSelector.transform.position = initialPosition; // Reset to initial position
+            fatherSelector.SetActive(true);
+        }
+        if (motherSelector != null)
+        {
+            motherSelector.transform.position = initialPosition; // Reset to initial position
+            motherSelector.SetActive(false);
+        }
+
+        fatherCounter = 2;
+        motherCounter = 2;
+        isFatherActive = true;
+        isMoving = false;
     }
 
     IEnumerator MoveSelector(Vector3 direction, GameObject selector, bool isFather)

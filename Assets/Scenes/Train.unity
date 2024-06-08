@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 10957319}
   m_Layer: 0
   m_Name: Cube (34)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 50841232}
   m_Layer: 0
   m_Name: Cube (23)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 51338128}
   m_Layer: 0
   m_Name: Cube (37)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 58923608}
   m_Layer: 0
   m_Name: Cube (21)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 108931763}
   m_Layer: 0
   m_Name: Cube (60)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 124245877}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 255562720}
   m_Layer: 0
   m_Name: Cube (49)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 291409577}
   m_Layer: 0
   m_Name: Cube (64)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1072,7 +1072,7 @@ GameObject:
   - component: {fileID: 311049319}
   m_Layer: 0
   m_Name: Cube (14)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 319698563}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1282,7 +1282,7 @@ GameObject:
   - component: {fileID: 397502979}
   m_Layer: 0
   m_Name: Cube (10)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1494,6 +1494,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  forwardAudio: {fileID: 0}
+  backwardAudio: {fileID: 0}
+  verticalAudio: {fileID: 0}
 --- !u!114 &416717921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,7 +1524,7 @@ GameObject:
   - component: {fileID: 481830880}
   m_Layer: 0
   m_Name: Cube (13)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1626,7 +1629,7 @@ GameObject:
   - component: {fileID: 510451268}
   m_Layer: 0
   m_Name: Cube (55)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1731,7 +1734,7 @@ GameObject:
   - component: {fileID: 548179630}
   m_Layer: 0
   m_Name: Cube (52)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1836,7 +1839,7 @@ GameObject:
   - component: {fileID: 557488534}
   m_Layer: 0
   m_Name: Cube (29)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1941,7 +1944,7 @@ GameObject:
   - component: {fileID: 579916918}
   m_Layer: 0
   m_Name: Cube (30)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2046,7 +2049,7 @@ GameObject:
   - component: {fileID: 597051332}
   m_Layer: 0
   m_Name: Cube (47)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2151,7 +2154,7 @@ GameObject:
   - component: {fileID: 628107508}
   m_Layer: 0
   m_Name: Cube (31)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2256,7 +2259,7 @@ GameObject:
   - component: {fileID: 655645992}
   m_Layer: 0
   m_Name: Cube (22)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2361,7 +2364,7 @@ GameObject:
   - component: {fileID: 669057286}
   m_Layer: 0
   m_Name: Cube (39)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2571,7 +2574,7 @@ GameObject:
   - component: {fileID: 711776674}
   m_Layer: 0
   m_Name: Cube (45)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2672,6 +2675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 724749745}
   - component: {fileID: 724749744}
+  - component: {fileID: 724749746}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2756,6 +2760,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &724749746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724749743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89757ecc1a82846b3ba8004341642aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalLight: {fileID: 724749744}
+  duration: 90
+  nightAmbientColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &728420462
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,7 +2789,7 @@ GameObject:
   - component: {fileID: 728420464}
   m_Layer: 0
   m_Name: Cube (58)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2875,7 +2894,7 @@ GameObject:
   - component: {fileID: 738267244}
   m_Layer: 0
   m_Name: Cube (61)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2980,7 +2999,7 @@ GameObject:
   - component: {fileID: 782120961}
   m_Layer: 0
   m_Name: Cube (51)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3085,7 +3104,7 @@ GameObject:
   - component: {fileID: 897081000}
   m_Layer: 0
   m_Name: Cube (41)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3296,7 +3315,7 @@ GameObject:
   - component: {fileID: 920189004}
   m_Layer: 0
   m_Name: Cube (38)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3401,7 +3420,7 @@ GameObject:
   - component: {fileID: 945335250}
   m_Layer: 0
   m_Name: Cube (43)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3506,7 +3525,7 @@ GameObject:
   - component: {fileID: 1091709010}
   m_Layer: 0
   m_Name: Cube (54)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3611,7 +3630,7 @@ GameObject:
   - component: {fileID: 1094868005}
   m_Layer: 0
   m_Name: Cube (28)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3716,7 +3735,7 @@ GameObject:
   - component: {fileID: 1135152934}
   m_Layer: 0
   m_Name: Cube (9)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3821,7 +3840,7 @@ GameObject:
   - component: {fileID: 1228681572}
   m_Layer: 0
   m_Name: Cube (33)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3926,7 +3945,7 @@ GameObject:
   - component: {fileID: 1256858199}
   m_Layer: 0
   m_Name: Cube (16)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4031,7 +4050,7 @@ GameObject:
   - component: {fileID: 1296038065}
   m_Layer: 0
   m_Name: Cube (50)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4242,7 +4261,7 @@ GameObject:
   - component: {fileID: 1324826691}
   m_Layer: 0
   m_Name: Cube (42)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4347,7 +4366,7 @@ GameObject:
   - component: {fileID: 1340221965}
   m_Layer: 0
   m_Name: Cube (48)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4452,7 +4471,7 @@ GameObject:
   - component: {fileID: 1351810197}
   m_Layer: 0
   m_Name: Cube (20)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4557,7 +4576,7 @@ GameObject:
   - component: {fileID: 1360350246}
   m_Layer: 0
   m_Name: Cube (62)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4662,7 +4681,7 @@ GameObject:
   - component: {fileID: 1393333649}
   m_Layer: 0
   m_Name: Cube (59)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4767,7 +4786,7 @@ GameObject:
   - component: {fileID: 1396861068}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4872,7 +4891,7 @@ GameObject:
   - component: {fileID: 1397230164}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4977,7 +4996,7 @@ GameObject:
   - component: {fileID: 1399819629}
   m_Layer: 0
   m_Name: Cube (7)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5082,7 +5101,7 @@ GameObject:
   - component: {fileID: 1406763757}
   m_Layer: 0
   m_Name: Cube (17)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5187,7 +5206,7 @@ GameObject:
   - component: {fileID: 1419449736}
   m_Layer: 0
   m_Name: Cube (11)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5292,7 +5311,7 @@ GameObject:
   - component: {fileID: 1429941445}
   m_Layer: 0
   m_Name: Cube (15)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5397,7 +5416,7 @@ GameObject:
   - component: {fileID: 1478069380}
   m_Layer: 0
   m_Name: Cube (8)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5502,7 +5521,7 @@ GameObject:
   - component: {fileID: 1489663716}
   m_Layer: 0
   m_Name: Cube (12)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5607,7 +5626,7 @@ GameObject:
   - component: {fileID: 1525807823}
   m_Layer: 0
   m_Name: Cube (56)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5712,7 +5731,7 @@ GameObject:
   - component: {fileID: 1561731532}
   m_Layer: 0
   m_Name: Cube (44)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5817,7 +5836,7 @@ GameObject:
   - component: {fileID: 1577735937}
   m_Layer: 0
   m_Name: Cube (36)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5922,7 +5941,7 @@ GameObject:
   - component: {fileID: 1592615398}
   m_Layer: 0
   m_Name: Cube (46)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6027,7 +6046,7 @@ GameObject:
   - component: {fileID: 1607767092}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6132,7 +6151,7 @@ GameObject:
   - component: {fileID: 1701628089}
   m_Layer: 0
   m_Name: Cube (26)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6271,7 +6290,7 @@ GameObject:
   - component: {fileID: 1719798630}
   m_Layer: 0
   m_Name: Cube (63)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6376,7 +6395,7 @@ GameObject:
   - component: {fileID: 1759832417}
   m_Layer: 0
   m_Name: Cube (18)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6481,7 +6500,7 @@ GameObject:
   - component: {fileID: 1767753549}
   m_Layer: 0
   m_Name: Cube (27)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6692,7 +6711,7 @@ GameObject:
   - component: {fileID: 1830577162}
   m_Layer: 0
   m_Name: Cube (19)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6819,7 +6838,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -6889,7 +6908,7 @@ GameObject:
   - component: {fileID: 1890719068}
   m_Layer: 0
   m_Name: Cube (25)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6994,7 +7013,7 @@ GameObject:
   - component: {fileID: 1900843253}
   m_Layer: 0
   m_Name: Cube (35)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7099,7 +7118,7 @@ GameObject:
   - component: {fileID: 1940786392}
   m_Layer: 0
   m_Name: Cube (24)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7204,7 +7223,7 @@ GameObject:
   - component: {fileID: 1943686150}
   m_Layer: 0
   m_Name: Cube (53)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7309,7 +7328,7 @@ GameObject:
   - component: {fileID: 1979767613}
   m_Layer: 0
   m_Name: Cube (32)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7414,7 +7433,7 @@ GameObject:
   - component: {fileID: 2030949763}
   m_Layer: 0
   m_Name: Cube (40)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7519,7 +7538,7 @@ GameObject:
   - component: {fileID: 2070558717}
   m_Layer: 0
   m_Name: Cube (57)
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

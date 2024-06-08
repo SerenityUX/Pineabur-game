@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ParentSelect.unity
     guid: 938dab8de247d49fb93673fb01775b70
+  - enabled: 1
+    path: Assets/Scenes/Dark.unity
+    guid: be9a1debd8c7d443f90ff930ede840e9
   m_configObjects: {}
