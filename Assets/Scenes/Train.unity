@@ -3751,7 +3751,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMaterial: {fileID: 2100000, guid: 5337022bd4511453ebcf165258f5f2d0, type: 2}
-  fadeDuration: 100
 --- !u!4 &779779123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5a1eaf653ad35494d910f749145cee40, type: 3}
@@ -5336,7 +5335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMaterial: {fileID: 2100000, guid: 5337022bd4511453ebcf165258f5f2d0, type: 2}
-  fadeDuration: 100
 --- !u!1001 &972152725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6202,7 +6200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMaterial: {fileID: 2100000, guid: 5337022bd4511453ebcf165258f5f2d0, type: 2}
-  fadeDuration: 100
 --- !u!1001 &1109387476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6569,7 +6566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMaterial: {fileID: 2100000, guid: 5337022bd4511453ebcf165258f5f2d0, type: 2}
-  fadeDuration: 100
 --- !u!4 &1186832557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5a1eaf653ad35494d910f749145cee40, type: 3}
@@ -7043,7 +7039,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMaterial: {fileID: 2100000, guid: 5337022bd4511453ebcf165258f5f2d0, type: 2}
-  fadeDuration: 100
 --- !u!4 &1254637701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5a1eaf653ad35494d910f749145cee40, type: 3}
@@ -7311,7 +7306,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMaterial: {fileID: 2100000, guid: 5337022bd4511453ebcf165258f5f2d0, type: 2}
-  fadeDuration: 100
 --- !u!1001 &1285004431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10715,7 +10709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 53719f687759c49b5bf448334d8f471f, type: 3}
       propertyPath: m_Name
-      value: SebastianParker
+      value: seb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
