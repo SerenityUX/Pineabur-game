@@ -14,6 +14,8 @@ public class InstantiateNPC : MonoBehaviour
         // Retrieve the NPC name from SceneData
         string npcName = SceneData.NPCName;
 
+        Debug.Log(npcName);
+
         // Load the prefab from the Resources folder
         GameObject npcPrefab = Resources.Load<GameObject>(npcName);
 

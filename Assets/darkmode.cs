@@ -7,7 +7,7 @@ public class FadeToNewMaterial : MonoBehaviour
     private Renderer renderer;
     private float startTime;
     private bool isFading = false;
-    private float fadeDuration = 70f; // 90 seconds total - 20 seconds delay
+    private float fadeDuration = 25f; // 90 seconds total - 20 seconds delay
 
     void Awake()
     {
@@ -20,7 +20,7 @@ public class FadeToNewMaterial : MonoBehaviour
     {
         float elapsedTime = Time.time - startTime;
 
-        if (elapsedTime >= 60f && !isFading)
+        if (elapsedTime >= 25f && !isFading)
         {
             isFading = true;
             startTime = Time.time; // Reset start time for fade

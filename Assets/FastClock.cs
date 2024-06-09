@@ -4,7 +4,7 @@ using TMPro;
 public class FastClock : MonoBehaviour
 {
     public TMP_Text clockText;
-    private const float duration = 90f;
+    private const float duration = 45f;
     private System.DateTime startTime;
     private System.DateTime endTime;
     private bool isNightScene = false;
