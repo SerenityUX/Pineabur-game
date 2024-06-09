@@ -1,44 +1,56 @@
 using UnityEngine;
-using System.Collections;
 
 public class FadeToNewMaterial : MonoBehaviour
 {
-    public Material newMaterial; // Assign the new material in the Inspector
-    public float fadeDuration = 20f; // Duration for the fade effect
+    public Material newMaterial;
+    private Material originalMaterial;
+    private Renderer renderer;
+    private float startTime;
+    private bool isFading = false;
+    private float fadeDuration = 70f; // 90 seconds total - 20 seconds delay
 
-    private Renderer _renderer;
-    private Material _originalMaterial;
-    private bool _isFading = false;
-
-    void Start()
+    void Awake()
     {
-        _renderer = GetComponent<Renderer>();
-        _originalMaterial = _renderer.material;
+        renderer = GetComponent<Renderer>();
+        originalMaterial = renderer.material;
+        startTime = Time.time;
     }
 
     void Update()
     {
-        if (!_isFading && Input.GetKeyDown(KeyCode.E))
+        float elapsedTime = Time.time - startTime;
+
+        if (elapsedTime >= 60f && !isFading)
         {
-            StartCoroutine(FadeToMaterial(newMaterial));
+            isFading = true;
+            startTime = Time.time; // Reset start time for fade
+        }
+
+        if (isFading)
+        {
+            elapsedTime = Time.time - startTime;
+
+            if (elapsedTime <= fadeDuration)
+            {
+                float t = elapsedTime / fadeDuration;
+                renderer.material.Lerp(originalMaterial, newMaterial, t);
+            }
+            else
+            {
+                // Fade complete, reset for next loop
+                renderer.material = newMaterial;
+                originalMaterial = newMaterial;
+                isFading = false;
+                startTime = Time.time;
+            }
         }
     }
 
-    private IEnumerator FadeToMaterial(Material targetMaterial)
+    // Public method to set the new material
+    public void SetNewMaterial(Material material)
     {
-        _isFading = true;
-        Material initialMaterial = _renderer.material;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float blend = Mathf.Clamp01(elapsedTime / fadeDuration);
-            _renderer.material.Lerp(initialMaterial, targetMaterial, blend);
-            yield return null;
-        }
-
-        _renderer.material = targetMaterial;
-        _isFading = false;
+        newMaterial = material;
+        isFading = false; // Reset fading process
+        startTime = Time.time; // Reset start time for new material
     }
 }
