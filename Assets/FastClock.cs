@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FastClock : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class FastClock : MonoBehaviour
     private System.DateTime startTime;
     private System.DateTime endTime;
     private bool isNightScene = false;
+    private bool sceneSwitched = false;
 
     void Start()
     {
@@ -44,6 +46,18 @@ public class FastClock : MonoBehaviour
 
             // Update the TMP text with the current time
             clockText.text = currentTime.ToString("hh:mm tt");
+
+            // Debug log to check values
+            Debug.Log($"Elapsed Time: {SceneData.ElapsedTime}, Interpolation Factor: {t}, Current Time: {currentTime.ToString("hh:mm tt")}");
+        }
+
+        // Check if the current time is past 7:00 PM (30 minutes before endTime)
+        if (!sceneSwitched && System.DateTime.Now.TimeOfDay >= endTime.AddMinutes(-30).TimeOfDay)
+        {
+            Debug.Log("Switching to ParentSelect scene.");
+            SceneManager.LoadScene("ParentSelect");
+            ResetClock();
+            sceneSwitched = true;
         }
     }
 
@@ -52,8 +66,17 @@ public class FastClock : MonoBehaviour
     {
         long startTicks = start.Ticks;
         long endTicks = end.Ticks;
-        long currentTicks = (long)(startTicks + (endTicks - startTicks) * t);
+        long currentTicks = (long)(startTicks + (endTicks - startTicks) * Mathf.Clamp01(t)); // Ensure t is clamped between 0 and 1
         return new System.DateTime(currentTicks);
+    }
+
+    // Reset the clock
+    void ResetClock()
+    {
+        SceneData.ElapsedTime = 0f;
+        startTime = System.DateTime.Today.AddHours(9); // Reset to 9:00 AM
+        endTime = System.DateTime.Today.AddHours(19).AddMinutes(30); // Reset to 7:30 PM
+        Debug.Log("Clock has been reset.");
     }
 
     public void SwitchToNightScene()
