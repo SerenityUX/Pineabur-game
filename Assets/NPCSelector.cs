@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NPCSelector : MonoBehaviour
 {
@@ -7,10 +8,13 @@ public class NPCSelector : MonoBehaviour
     private GameObject _highlightedNPC;
     private Material _originalMaterial;
     public Material glowMaterial; // Assign a material with glow and stroke effects
+    public Texture2D defaultCursor;
+    public Texture2D pointerCursor;
 
     void Start()
     {
         _mainCamera = Camera.main;
+        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
     }
 
     void Update()
@@ -40,6 +44,7 @@ public class NPCSelector : MonoBehaviour
                     _highlightedNPC = hitObject;
                     _originalMaterial = _highlightedNPC.GetComponent<Renderer>().material;
                     _highlightedNPC.GetComponent<Renderer>().material = glowMaterial; // Apply glow material
+                    Cursor.SetCursor(pointerCursor, Vector2.zero, CursorMode.Auto); // Change cursor to pointer cursor
                 }
             }
             else
@@ -61,7 +66,7 @@ public class NPCSelector : MonoBehaviour
 
     void CheckForInteraction()
     {
-        if (_highlightedNPC != null && Input.GetKeyDown(KeyCode.E))
+        if (_highlightedNPC != null && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
         {
             Debug.Log(_highlightedNPC.name);
             SceneData.PreviousScene = SceneManager.GetActiveScene().name;
@@ -75,5 +80,6 @@ public class NPCSelector : MonoBehaviour
         _highlightedNPC.GetComponent<Renderer>().material = _originalMaterial;
         _highlightedNPC = null;
         _originalMaterial = null;
+        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto); // Reset cursor to default
     }
 }
