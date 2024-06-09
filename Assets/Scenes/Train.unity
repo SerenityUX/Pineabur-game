@@ -1934,16 +1934,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ebace86b236004e86872c7560d92b936, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.726
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ebace86b236004e86872c7560d92b936, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.726
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ebace86b236004e86872c7560d92b936, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.726
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ebace86b236004e86872c7560d92b936, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.73
+      value: -1.669
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebace86b236004e86872c7560d92b936, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: 0.953
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebace86b236004e86872c7560d92b936, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.69
+      value: 5.759
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebace86b236004e86872c7560d92b936, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3333,7 +3345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionalLight: {fileID: 724749744}
-  duration: 90
+  duration: 45
   nightAmbientColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!82 &724749747
 AudioSource:

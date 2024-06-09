@@ -21,16 +21,31 @@ public class InstantiateNPC : MonoBehaviour
 
         if (npcPrefab != null)
         {
-            // Define the position, rotation, and scale
-            Vector3 position = new Vector3(-2.36f, 3.58f, -4.7297f);
-            Quaternion rotation = Quaternion.Euler(0, -180, 0);
-            Vector3 scale = new Vector3(6.358303f, 6.358303f, 6.358303f);
+            if(npcName == "aadhya")
+            {
+               Vector3 position = new Vector3(-7.46f, 3.58f, -4.7297f);
+                // Define the position, rotation, and scale
+                Quaternion rotation = Quaternion.Euler(0, -180, 0);
+                Vector3 scale = new Vector3(6.358303f, 6.358303f, 6.358303f);
 
-            // Instantiate the prefab
-            GameObject npcInstance = Instantiate(npcPrefab, position, rotation);
+                // Instantiate the prefab
+                GameObject npcInstance = Instantiate(npcPrefab, position, rotation);
 
-            // Apply the scale
-            npcInstance.transform.localScale = scale;
+                // Apply the scale
+                npcInstance.transform.localScale = scale;
+            } else
+            {
+                Vector3 position = new Vector3(-2.36f, 3.58f, -4.7297f);
+                // Define the position, rotation, and scale
+                Quaternion rotation = Quaternion.Euler(0, -180, 0);
+                Vector3 scale = new Vector3(6.358303f, 6.358303f, 6.358303f);
+
+                // Instantiate the prefab
+                GameObject npcInstance = Instantiate(npcPrefab, position, rotation);
+
+                // Apply the scale
+                npcInstance.transform.localScale = scale;
+            }
         }
         else
         {
