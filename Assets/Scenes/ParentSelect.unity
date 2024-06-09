@@ -160,6 +160,8 @@ MonoBehaviour:
   correctPairing: {fileID: 796734779}
   failedPairing: {fileID: 1521836506}
   clickSound: {fileID: 27100357}
+  babyNameText: {fileID: 930068597}
+  qualitiesText: {fileID: 2088677957}
 --- !u!4 &27100356
 Transform:
   m_ObjectHideFlags: 0
@@ -1964,7 +1966,7 @@ Transform:
   m_GameObject: {fileID: 1012698964}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -1.99, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 2, z: 0.0437505}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3073,7 +3075,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2b4d89c4e4deb4127b3c238bdce01cfa, type: 2}
+  - {fileID: 2100000, guid: a68d51a6e7868488abb081520f5b3c83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

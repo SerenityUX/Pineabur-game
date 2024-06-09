@@ -52,10 +52,16 @@ public class PlayerController : MonoBehaviour
                 walkingAudio.Play();
                 animator.SetBool("IsWalking", true);
                 Debug.Log("Started walking forward.");
+
             }
 
             // Ensure the armature is facing forward
+            if (armatureRoot.localRotation == (Quaternion.Euler(0, 180, 0))) {
+                armatureRoot.localPosition = armatureRoot.localPosition + new Vector3(1, 0, 4);
+            };
             armatureRoot.localRotation = initialRotation;
+
+
             Debug.Log("Set armature rotation to initial forward rotation.");
         }
         else if (Input.GetKey(KeyCode.S))
@@ -66,10 +72,19 @@ public class PlayerController : MonoBehaviour
                 walkingAudio.Play();
                 animator.SetBool("IsWalking", true);
                 Debug.Log("Started walking backward.");
+
             }
 
             // Rotate the armature to face backward
-            armatureRoot.localRotation = initialRotation * Quaternion.Euler(180, 0, 0);
+
+            if (armatureRoot.localRotation == initialRotation)
+            {
+                armatureRoot.localPosition = armatureRoot.localPosition - new Vector3(1, 0, 4);
+
+            };
+
+            armatureRoot.localRotation = Quaternion.Euler(0, 180, 0);
+
             Debug.Log("Set armature rotation to initial backward rotation.");
         }
         else
