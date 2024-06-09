@@ -27,8 +27,8 @@ public class ParentSelect : MonoBehaviour
     private Vector3 initialPosition = new Vector3(6, 3.38f, -8.68f); // Initial position for selectors
     private List<BabyData.Baby> babiesBornToday;
 
-    private List<string> fathers = new List<string> { "franklin", "john", "mike", "david", "peter", "alex" };
-    private List<string> mothers = new List<string> { "nancy", "mary", "susan", "jane", "linda", "sarah" };
+    private List<string> fathers = new List<string> { "franklin", "seb", "dom", "dylan", "tyler", "steve" };
+    private List<string> mothers = new List<string> { "nancy", "aadhya", "emma", "scarlett", "sabrina", "jane" };
 
     void Start()
     {
