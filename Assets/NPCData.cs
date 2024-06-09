@@ -69,7 +69,7 @@ public static class NPCData
             "Woah ok... calm down buddy... That level of narcisissm is umatched and unseen.",
             "I might- be in love. This guy has crazy deep thoughts that give me existential crisis half the time. Yeah I would totally love spending my life with him.",
             "You wouldn't last an hour in the asylum where they raised me",
-            "Days do fleet, and years doth swiftly follow; I age, and in my years become the very visage of that which I most despised in all my life. I rue the day I lay with him."
+            "Days do fleet, and years doth swiftly follow; I age, and in my years become the very visage of that which I most despised in all my life."
           },
           Partners = new List<string> { null, "dylan", "steve", "dominic", "tyler", "steve", "sebastian" },
           Kids = new List<string> {},
@@ -188,7 +188,7 @@ public static class NPCData
             "What do you mean I gave him money for weed? He's a marshmallow, he said he's using those $20 to cure his mom from cancer.",
             "A lesson without pain is meaningless. That’s because no one can gain without sacrificing something. But by enduring that pain and overcoming it, he shall obtain a powerful, unmatched heart... a fullmetal heart.",
             "Wa- Wa- Wa- Waterfront? I don't know what you're talking about. I'm just here to see the sights.",
-            "Lalalalalalalalalaalalalalala"
+            "bum bum bummm"
           },
           Partners = new List<string> { null, "nancy", null, "jane", "aadhya", "scarlett", "jane" },
           Kids = new List<string> {},
@@ -242,7 +242,7 @@ public static class NPCData
           Ethnicity = "dolphin",
           VoiceLines = new List<string>
           {
-            "In a world ravaged by a giant, mutant hamster, our only solace is a surprise butt plug.",
+            "In a world ravaged by a giant, mutant hamster, our only solace is a surprise fork.",
             "Nothing says 'I love you' like a surprise visit from grandma… and her collection of medieval torture devices.",
             "My new workout routine? Lifting a gallon of celsius to my mouth repeatedly.",
             "That's not HOW IT WORKS. GOD FUCKING DAMN IT.",
