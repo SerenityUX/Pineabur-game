@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class ParentSelect : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class ParentSelect : MonoBehaviour
     public AudioSource clickSound; // Add this in the inspector
     public TextMeshPro babyNameText; // Assign a TMP Text element for the baby's name
     public TextMeshPro qualitiesText; // Assign a TMP Text element for the baby's qualities
+    public GameObject plane; // Add this to reference the plane in the inspector
 
     private int fatherCounter = 2;
     private int motherCounter = 2;
@@ -168,7 +170,7 @@ public class ParentSelect : MonoBehaviour
 
                 SceneData.Deaths = SceneData.Deaths + 1;
 
-                if(SceneData.Deaths == 14)
+                if (SceneData.Deaths == 14)
                 {
                     SceneManager.LoadScene("Lose");
                 }
@@ -202,7 +204,8 @@ public class ParentSelect : MonoBehaviour
                 SceneData.Day = SceneData.Day + 1;
                 SceneData.ElapsedTime = 0f;
                 SceneManager.LoadScene("Train");
-            } else
+            }
+            else
             {
                 SceneManager.LoadScene("Win");
             }
@@ -308,6 +311,23 @@ public class ParentSelect : MonoBehaviour
         if (qualitiesText != null)
         {
             qualitiesText.text = string.Join("\n", baby.Qualities);
+        }
+
+        // Load and set the texture for the plane
+        if (plane != null)
+        {
+            string imagePath = Path.Combine(Application.dataPath, "resources", baby.Name + ".png");
+            if (File.Exists(imagePath))
+            {
+                byte[] fileData = File.ReadAllBytes(imagePath);
+                Texture2D texture = new Texture2D(2, 2);
+                texture.LoadImage(fileData);
+                plane.GetComponent<Renderer>().material.mainTexture = texture;
+            }
+            else
+            {
+                Debug.LogWarning("Image not found at path: " + imagePath);
+            }
         }
     }
 }
