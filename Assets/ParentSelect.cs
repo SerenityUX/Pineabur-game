@@ -189,6 +189,7 @@ public class ParentSelect : MonoBehaviour
         }
         else
         {
+            SceneData.Day = SceneData.Day + 1;
             SceneManager.LoadScene("Train");
         }
     }

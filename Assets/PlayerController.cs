@@ -24,6 +24,14 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject player = GameObject.FindWithTag("Player");
+
+        Debug.Log(SceneData.PlayerPosition);
+        if (SceneData.PlayerPosition != new Vector3(0, 0, 0))
+        {
+            player.transform.position = SceneData.PlayerPosition;
+            player.transform.rotation = SceneData.PlayerRotation;
+        }
         // Ensure the player starts in the idle state
         isWalking = false;
         animator.SetBool("IsWalking", false);
