@@ -165,6 +165,14 @@ public class ParentSelect : MonoBehaviour
                 motherSelector.SetActive(false);
                 selectionText.gameObject.SetActive(false);
                 selectIndicator.SetActive(false);
+
+                SceneData.Deaths = SceneData.Deaths + 1;
+
+                if(SceneData.Deaths == 14)
+                {
+                    SceneManager.LoadScene("Lose");
+                }
+
                 failedPairing.gameObject.SetActive(true);
             }
         }
@@ -189,8 +197,15 @@ public class ParentSelect : MonoBehaviour
         }
         else
         {
-            SceneData.Day = SceneData.Day + 1;
-            SceneManager.LoadScene("Train");
+            if (SceneData.Day != 6)
+            {
+                SceneData.Day = SceneData.Day + 1;
+                SceneData.ElapsedTime = 0f;
+                SceneManager.LoadScene("Train");
+            } else
+            {
+                SceneManager.LoadScene("Win");
+            }
         }
     }
 
