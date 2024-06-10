@@ -7,6 +7,7 @@ public class FastClock : MonoBehaviour
     private const float duration = 45f;
     private System.DateTime startTime;
     private System.DateTime endTime;
+    private System.TimeSpan loadingTime;
     private bool isNightScene = false;
 
     void Start()
@@ -14,6 +15,7 @@ public class FastClock : MonoBehaviour
         // Initialize start and end times
         startTime = System.DateTime.Today.AddHours(9); // 9:00 AM
         endTime = System.DateTime.Today.AddHours(19).AddMinutes(30); // 7:30 PM
+        loadingTime = new System.TimeSpan(19, 11, 0); // 7:11 PM
 
         // Check if TMP_Text is assigned
         if (clockText == null)
@@ -42,8 +44,17 @@ public class FastClock : MonoBehaviour
             // Calculate the current time based on interpolation
             System.DateTime currentTime = LerpDateTime(startTime, endTime, t);
 
-            // Update the TMP text with the current time
-            clockText.text = currentTime.ToString("hh:mm tt");
+            // Check if the current time is after 7:11 PM in the simulated time
+            if (currentTime.TimeOfDay >= loadingTime)
+            {
+                // Set the text to "Loading..." after 7:11 PM
+                clockText.text = "Loading...";
+            }
+            else
+            {
+                // Update the TMP text with the current time
+                clockText.text = currentTime.ToString("hh:mm tt");
+            }
 
             // Debug log to check values
             Debug.Log($"Elapsed Time: {SceneData.ElapsedTime}, Interpolation Factor: {t}, Current Time: {currentTime.ToString("hh:mm tt")}");
