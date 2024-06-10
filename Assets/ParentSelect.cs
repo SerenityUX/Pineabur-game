@@ -313,20 +313,20 @@ public class ParentSelect : MonoBehaviour
             qualitiesText.text = string.Join("\n", baby.Qualities);
         }
 
-        // Load and set the texture for the plane
+        // Load and set the texture for the plane using the native resource loader
         if (plane != null)
         {
-            string imagePath = Path.Combine(Application.dataPath, "resources", baby.Name + ".png");
-            if (File.Exists(imagePath))
+            // Load the texture from the Resources folder
+            string resourcePath = "people/" + baby.Name;
+            Texture2D texture = Resources.Load<Texture2D>(resourcePath);
+
+            if (texture != null)
             {
-                byte[] fileData = File.ReadAllBytes(imagePath);
-                Texture2D texture = new Texture2D(2, 2);
-                texture.LoadImage(fileData);
                 plane.GetComponent<Renderer>().material.mainTexture = texture;
             }
             else
             {
-                Debug.LogWarning("Image not found at path: " + imagePath);
+                Debug.LogWarning("Image not found in Resources folder: " + resourcePath);
             }
         }
     }
